@@ -35,4 +35,4 @@ Recommending 5 movies based on the movie that you like.
 - `streamlit`
 
 ## Example
-![image][example.png]
+![image](example.png)
