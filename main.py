@@ -32,28 +32,38 @@ def recommend(movie):
 
 selectedMovie = st.selectbox(
     "Enter a movie you like",
-    moviesList
+    moviesList,
+    index = None,
+    placeholder = "Start typing...",
 )
 
 if st.button("Recommend"):
-    recs, posters = recommend(selectedMovie)
+    if selectedMovie!=None:
+        recs, posters = recommend(selectedMovie)
 
-    col1, col2, col3, col4, col5 = st.columns(5)
+        col1, col2, col3, col4, col5 = st.columns(5)
 
-    with col1:
-        st.image(posters[0])
-        st.text(recs[0])
+        with col1:
+            
+            st.image(posters[0])
+            st.write(recs[0])
 
-    with col2:
-        st.image(posters[1])
-        st.text(recs[1])
-    with col3:
-        st.image(posters[2])
-        st.text(recs[2])
+        with col2:
+            st.image(posters[1])
+            st.write(recs[1])
+        with col3:
+            st.image(posters[2])
+            st.write(recs[2])
 
-    with col4:
-        st.image(posters[3])
-        st.text(recs[3])
-    with col5:
-        st.image(posters[4])
-        st.text(recs[4])
+        with col4:
+            st.image(posters[3])
+            st.write(recs[3])
+        with col5:
+            st.image(posters[4])
+            st.write(recs[4])
+
+
+    else:
+        st.text('Please select a movie!!!')
+
+
